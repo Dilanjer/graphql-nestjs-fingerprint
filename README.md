@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/Dilanjer/graphql-nestjs-fingerprint/blob/main/docs/baner.png" alt="Nestjs Fingerprint"/>
+    <img src="https://github.com/Dilanjer/graphql-nestjs-fingerprint/blob/main/docs/baner.png?raw=true" alt="Nestjs Fingerprint"/>
 </p>
 
 
