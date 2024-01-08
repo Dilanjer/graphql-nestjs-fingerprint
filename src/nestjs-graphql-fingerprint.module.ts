@@ -3,7 +3,7 @@ import * as cookieParser from "cookie-parser";
 import { NestjsGraphqlFingerprintMiddleware } from "./middlewares/nestjs-graphql-fingerprint.middleware";
 import { ModuleConfigs, defaultModuleConfigs } from "./type";
 
-export class NestjsFingerprintModule implements NestModule {
+export class NestjsGraphqlFingerprintModule implements NestModule {
   private static configs: ModuleConfigs;
   /**
    * Initializes the root module of the application.
@@ -20,14 +20,14 @@ export class NestjsFingerprintModule implements NestModule {
     // Return the module configuration
     return {
       global: true,
-      module: NestjsFingerprintModule,
+      module: NestjsGraphqlFingerprintModule,
     };
   }
 
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(cookieParser()).forRoutes("*");
     consumer
-      .apply(NestjsGraphqlFingerprintMiddleware(NestjsFingerprintModule.configs))
+      .apply(NestjsGraphqlFingerprintMiddleware(NestjsGraphqlFingerprintModule.configs))
       .forRoutes("*");
   }
 }
