@@ -46,7 +46,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { Module } from '@nestjs/common';
 import { join } from 'node:path';
 
-import { NestjsFingerprintModule } from 'nestjs-fingerprint';
+import { NestjsGraphqlFingerprintModule } from 'graphql-nestjs-fingerprint';
 import { AppResolver } from './app.resolver';
 import { AppService } from './app.service';
 
@@ -58,7 +58,7 @@ import { AppService } from './app.service';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       context: ({req, res}) => ({req, res}) // important
     }),
-    NestjsFingerprintModule.forRoot({
+    NestjsGraphqlFingerprintModule.forRoot({
       params: ['headers', 'userAgent', 'ipAddress'],
       cookieOptions: {
         name: 'your_cookie_name', // optional
