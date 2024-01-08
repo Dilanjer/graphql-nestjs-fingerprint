@@ -47,7 +47,7 @@ import { Module } from '@nestjs/common';
 import { join } from 'node:path';
 
 import { NestjsFingerprintModule } from 'nestjs-fingerprint';
-import { AppResolver } from './AppResolver';
+import { AppResolver } from './app.resolver';
 import { AppService } from './app.service';
 
 
